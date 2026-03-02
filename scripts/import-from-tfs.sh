@@ -13,7 +13,7 @@
 #   # import a specific work item by ID
    AZURE_DEVOPS_ORG=https://dev.azure.com/yourOrg \
    AZURE_DEVOPS_PROJECT=yourProject \
-   AZURE_DEVOPS_PAT=<your-pat> \
+   AZURE_DEVOPS_PAT=3333333 \
    ./scripts/import-from-tfs.sh --feature-id=123
 
 # export variables so the Node script can see them
