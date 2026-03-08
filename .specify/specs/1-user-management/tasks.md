@@ -48,6 +48,13 @@ description: "Task list for User Management feature"
 
 **Independent Test**: Fill out and submit the UserForm; new entry appears in UserList
 
+**Acceptance Criteria:**
+- The UserForm component displays input fields for name and email.
+- The form validates that name and email are provided and email is in a valid format.
+- Upon successful submission, the new user is added to the API and the UserList updates to show the new user.
+- If the API call fails, an error message is displayed to the user.
+- The form resets after successful submission.
+
 ### Tests for User Story 1
 
 - [ ] T015 [P] [US1] Contract test for POST /users in tests/contract/test_user_api.js
@@ -74,6 +81,11 @@ description: "Task list for User Management feature"
 
 **Independent Test**: Navigate to ManageUsers; user list is populated via API
 
+**Acceptance Criteria:**
+- When the ManageUsers page loads, it fetches and displays all users from the API.
+- If there are no users, an empty state message is shown.
+- If the API call fails, a user-friendly error message is displayed.
+
 - [ ] T025 [P] [US4] Integration test for loading page and rendering users from mock API
 - [ ] T026 [P] [US4] Ensure `UserList` supports empty state message in `src/components/UserList.jsx`
 - [ ] T027 [US4] Add call to `getUsers` in `ManageUsers.jsx` on mount
@@ -88,6 +100,13 @@ description: "Task list for User Management feature"
 **Goal**: Allow editing of a user record
 
 **Independent Test**: Edit a user and verify list updates
+
+**Acceptance Criteria:**
+- Each user in the UserList has an "Edit" button.
+- Clicking "Edit" populates the UserForm with the user's current data.
+- Submitting the form updates the user via API and refreshes the list.
+- Validation ensures email uniqueness and format.
+- Success feedback is shown after update.
 
 - [ ] T029 [P] [US2] Contract test for PUT /users/:id in tests/contract/test_user_api.js
 - [ ] T030 [P] [US2] Integration test for editing a user in tests/integration/test_update_user.js
@@ -105,6 +124,12 @@ description: "Task list for User Management feature"
 **Goal**: Allow removal of a user from the list with confirmation
 
 **Independent Test**: Delete button removes user and updates list
+
+**Acceptance Criteria:**
+- Each user in the UserList has a "Delete" button.
+- Clicking "Delete" shows a confirmation dialog.
+- Confirming deletion removes the user via API and updates the list.
+- If deletion fails (e.g., user not found), an error message is shown.
 
 - [ ] T035 [P] [US3] Contract test for DELETE /users/:id in tests/contract/test_user_api.js
 - [ ] T036 [P] [US3] Integration test for deleting a user in tests/integration/test_delete_user.js
